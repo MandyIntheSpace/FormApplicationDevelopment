@@ -1,0 +1,36 @@
+﻿@page "/Form";
+@using Data.Model;
+
+<EditForm Model="formModel" OnSubmit="@HandleSubmit">
+	<DataAnnotationsValidator/>
+	<ValidationSummary/>
+	<div class="form-group">
+		<label for="FirstName">FirstName</label>
+		<InputText id="FirstName" class="form-control" @bind-Value="@formModel.FirstName"/>
+	</div>
+	<div class="form-group">
+		<label for="LastName">LastName</label>
+		<InputText id="LastName" class="form-control" @bind-Value="@formModel.LastName"/>
+	</div>
+	<div class="form-group">
+		<label for="Email">Email</label>
+		<InputText id="Email" class="form-control" @bind-Value="@formModel.Email"/>
+	</div>
+	<div class="form-group">
+		<label for="PhoneNumber">PhoneNumber</label>
+		<InputText id="PhoneNumber" class="form-control" @bind-Value="@formModel.PhoneNumber"/>
+	</div>
+	<div class="form-group">
+		<label for="Address">Address</label>
+		<InputText id="Address" class="form-control" @bind-Value="@formModel.Address"/>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+	FormModel formModel = new FormModel();
+	public void HandleSubmit(EditContext editContext)
+	{
+		
+	}
+}
